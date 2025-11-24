@@ -1,0 +1,22 @@
+# Yocto build outputs (keep builds outside this repo)
+build*/
+tmp*/
+tmp-glibc/
+sstate-cache/
+downloads/
+cache*/
+logs/
+bitbake-cookerdaemon.log
+
+# Editors / tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Python / virtualenv
+__pycache__/
+*.pyc
+.venv/
+.env
