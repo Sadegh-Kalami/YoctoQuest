@@ -453,7 +453,7 @@ def update_dashboard(content, total_xp, completed_badges, total_badges, complete
 
 
 def main():
-    journal_path = Path(__file__).parent / 'notes' / 'learning-journal.md'
+    journal_path = Path(__file__).parent / 'README.md'
     
     if not journal_path.exists():
         print(f"❌ Error: {journal_path} not found!")
