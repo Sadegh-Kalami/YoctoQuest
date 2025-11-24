@@ -136,6 +136,62 @@ def parse_badges(content):
     return completed_badges, total_badges
 
 
+def parse_quest_log_time(content):
+    """Calculate total time spent today from Quest Log"""
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    quest_section = re.search(
+        r'## 📝 QUEST LOG.*?\n\| Date.*?\n\|:.*?\n((?:\|.*?\n)+)',
+        content, re.DOTALL
+    )
+    
+    if not quest_section:
+        return "0m"
+    
+    quest_lines = quest_section.group(1).strip().split('\n')
+    total_minutes = 0
+    
+    for line in quest_lines:
+        if today in line and line.strip().startswith('|'):
+            parts = [p.strip() for p in line.split('|')[1:-1]]
+            if len(parts) >= 5:
+                time_str = parts[4]  # Time column (now 5th column without XP and Level)
+                # Parse time formats: "2h", "1.5h", "30m", "2h 30m"
+                hours = 0
+                minutes = 0
+                
+                if 'h' in time_str:
+                    if ' ' in time_str:
+                        # Format: "2h 30m"
+                        time_parts = time_str.split()
+                        for part in time_parts:
+                            if 'h' in part:
+                                hours = float(part.replace('h', ''))
+                            elif 'm' in part:
+                                minutes = float(part.replace('m', ''))
+                    else:
+                        # Format: "2h" or "1.5h"
+                        hours = float(time_str.replace('h', ''))
+                elif 'm' in time_str:
+                    # Format: "30m"
+                    minutes = float(time_str.replace('m', ''))
+                
+                total_minutes += (hours * 60) + minutes
+    
+    # Convert back to hours and minutes
+    hours = int(total_minutes // 60)
+    minutes = int(total_minutes % 60)
+    
+    if hours > 0 and minutes > 0:
+        return f"{hours}h {minutes}m"
+    elif hours > 0:
+        return f"{hours}h"
+    elif minutes > 0:
+        return f"{minutes}m"
+    else:
+        return "0m"
+
+
 def check_badge_achievements(content, module_stats):
     """Automatically check and date badges based on completed tasks"""
     today = datetime.now().strftime('%Y-%m-%d')
@@ -278,8 +334,8 @@ def update_learning_tracker_xp(content):
         
         return match.group(0)
     
-    # Update learning tracker rows
-    pattern = r'\| \*\*\d+\*\* \| .+? \| .+? \| `.+?` \| \d+ \| .+? \|'
+    # Update learning tracker rows - match with flexible spacing at end
+    pattern = r'\| \*\*\d+\*\* \| .+? \| .+? \| `.+?` \| \d+ \| .*?\|'
     content = re.sub(pattern, replace_line, content)
     
     return content
@@ -317,7 +373,7 @@ def update_module_tracker(content, module_stats):
     return content
 
 
-def update_dashboard(content, total_xp, completed_badges, total_badges, completed_modules):
+def update_dashboard(content, total_xp, completed_badges, total_badges, completed_modules, session_time):
     """Update the player dashboard"""
     level, stage, level_progress, next_xp = get_level_info(total_xp)
     
@@ -340,13 +396,13 @@ def update_dashboard(content, total_xp, completed_badges, total_badges, complete
     today = datetime.now().strftime('%Y-%m-%d')
     
     # Update dashboard
-    dashboard_pattern = r'```\n┏━+┓\n┃.+?┃\n┃.+?┃\n┃.+?┃\n┃.+?┃\n┃.+?┃\n┗━+┛\n```'
+    # Match the table format dashboard
+    dashboard_pattern = r'\| 🎯 \*\*CURRENT LEVEL\*\*.*?\n\|:.*?\n\| ⚡.*?\n\| 🏆.*?\n\| 📚.*?\n\| 🔥.*?\n\n\*\*Last Updated:\*\* `[\d-]+`'
     
     # Create a markdown-friendly dashboard without box drawing (better rendering)
     # Use a table format which renders consistently - centered alignment
     
-    new_dashboard = f'''
-| 🎯 **CURRENT LEVEL** | **{level_name.replace("*", "")}** | Stage {stage}/4 |
+    new_dashboard = f'''| 🎯 **CURRENT LEVEL** | **{level_name.replace("*", "")}** | Stage {stage}/4 |
 |:--------------------:|:---------------------------------:|:---------------:|
 | ⚡ **Total XP** | **{total_xp} / 1000** | `{create_progress_bar(min(int(total_xp/10), 10), 10)}` |
 | 🏆 **Badges Earned** | **{completed_badges} / 8** | `{create_progress_bar(int(completed_badges/8*5), 5)}` |
@@ -355,12 +411,19 @@ def update_dashboard(content, total_xp, completed_badges, total_badges, complete
 
 **Last Updated:** `{today}`'''
     
-    content = re.sub(dashboard_pattern, new_dashboard, content, flags=re.DOTALL)
+    content = re.sub(dashboard_pattern, new_dashboard, content, flags=re.DOTALL | re.MULTILINE)
     
     # Update last updated date
     content = re.sub(
         r'\*\*Last Updated:\*\* `[\d-]+`',
         f'**Last Updated:** `{today}`',
+        content
+    )
+    
+    # Update session time
+    content = re.sub(
+        r'\*\*Session Time Today:\*\* `.+?`',
+        f'**Session Time Today:** `{session_time}`',
         content
     )
     
@@ -433,8 +496,11 @@ def main():
         total_xp += s['xp']
     total_xp += completed_badges * BADGE_XP
     
+    # Parse session time from quest log
+    session_time = parse_quest_log_time(content)
+    
     content = update_module_tracker(content, module_stats)
-    content = update_dashboard(content, total_xp, completed_badges, total_badges, completed_modules)
+    content = update_dashboard(content, total_xp, completed_badges, total_badges, completed_modules, session_time)
     
     # Write back
     journal_path.write_text(content, encoding='utf-8')

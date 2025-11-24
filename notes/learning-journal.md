@@ -7,7 +7,7 @@
 ## 📊 PLAYER DASHBOARD
 
 | 🎯 **CURRENT LEVEL** | **Apprentice** | Stage 1/4 |
-|:--------------------:|:--------------:|:---------:|
+|:--------------------:|:---------------------------------:|:---------------:|
 | ⚡ **Total XP** | **0 / 1000** | `[░░░░░░░░░░]` |
 | 🏆 **Badges Earned** | **0 / 8** | `[░░░░░]` |
 | 📚 **Modules Complete** | **0 / 11** | `[░░░░░░░░░░░]` |
@@ -15,7 +15,7 @@
 
 **Last Updated:** `2025-11-24`
 
-**Session Time Today:** `0h 30m`
+**Session Time Today:** `2h 15m`
 
 ---
 
@@ -42,31 +42,31 @@ Track what you've learned and your understanding level for each topic!
 |:------:|:------|:------:|:----------:|:---------:|:-------------|
 | **00** | System Requirements | ☐ | `░░░░░` | 0 |  |
 | **00** | Tools Installation | ☐ | `░░░░░` | 0 |  |
-| **01** | What is Yocto? | ☐ | `░░░░░` | 0 | |
-| **01** | Architecture Overview | ☐ | `░░░░░` | 0 | |
-| **01** | Key Concepts (BitBake, Layers, Recipes) | ☐ | `░░░░░` | 0 | |
-| **02** | Poky Setup | ☐ | `░░░░░` | 0 | |
-| **02** | First Build (core-image-minimal) | ☐ | `░░░░░` | 0 | |
-| **02** | Build Directory Structure | ☐ | `░░░░░` | 0 | |
-| **03** | Recipe Syntax (.bb files) | ☐ | `░░░░░` | 0 | |
-| **03** | Writing Your First Recipe | ☐ | `░░░░░` | 0 | |
-| **03** | Recipe Variables & Functions | ☐ | `░░░░░` | 0 | |
-| **04** | Understanding Layers | ☐ | `░░░░░` | 0 | |
-| **04** | Creating Custom Layer | ☐ | `░░░░░` | 0 | |
-| **04** | Layer Priority & Configuration | ☐ | `░░░░░` | 0 | |
-| **05** | Image Types & Classes | ☐ | `░░░░░` | 0 | |
-| **05** | Custom Image Creation | ☐ | `░░░░░` | 0 | |
-| **05** | Package Groups | ☐ | `░░░░░` | 0 | |
-| **06** | .bbappend Files | ☐ | `░░░░░` | 0 | |
-| **06** | Package Management (rpm/deb/ipk) | ☐ | `░░░░░` | 0 | |
-| **06** | Kernel Customization | ☐ | `░░░░░` | 0 | |
-| **07** | Machine Configurations | ☐ | `░░░░░` | 0 | |
-| **07** | BSP Layer Development | ☐ | `░░░░░` | 0 | |
-| **08** | SDK Generation | ☐ | `░░░░░` | 0 | |
-| **08** | Cross-compilation with SDK | ☐ | `░░░░░` | 0 | |
-| **09** | Common Build Errors | ☐ | `░░░░░` | 0 | |
-| **09** | BitBake Debugging Tools | ☐ | `░░░░░` | 0 | |
-| **09** | Log Analysis | ☐ | `░░░░░` | 0 | |
+| **01** | What is Yocto? | ☐ | `░░░░░` | 0 |  |
+| **01** | Architecture Overview | ☐ | `░░░░░` | 0 |  |
+| **01** | Key Concepts (BitBake, Layers, Recipes) | ☐ | `░░░░░` | 0 |  |
+| **02** | Poky Setup | ☐ | `░░░░░` | 0 |  |
+| **02** | First Build (core-image-minimal) | ☐ | `░░░░░` | 0 |  |
+| **02** | Build Directory Structure | ☐ | `░░░░░` | 0 |  |
+| **03** | Recipe Syntax (.bb files) | ☐ | `░░░░░` | 0 |  |
+| **03** | Writing Your First Recipe | ☐ | `░░░░░` | 0 |  |
+| **03** | Recipe Variables & Functions | ☐ | `░░░░░` | 0 |  |
+| **04** | Understanding Layers | ☐ | `░░░░░` | 0 |  |
+| **04** | Creating Custom Layer | ☐ | `░░░░░` | 0 |  |
+| **04** | Layer Priority & Configuration | ☐ | `░░░░░` | 0 |  |
+| **05** | Image Types & Classes | ☐ | `░░░░░` | 0 |  |
+| **05** | Custom Image Creation | ☐ | `░░░░░` | 0 |  |
+| **05** | Package Groups | ☐ | `░░░░░` | 0 |  |
+| **06** | .bbappend Files | ☐ | `░░░░░` | 0 |  |
+| **06** | Package Management (rpm/deb/ipk) | ☐ | `░░░░░` | 0 |  |
+| **06** | Kernel Customization | ☐ | `░░░░░` | 0 |  |
+| **07** | Machine Configurations | ☐ | `░░░░░` | 0 |  |
+| **07** | BSP Layer Development | ☐ | `░░░░░` | 0 |  |
+| **08** | SDK Generation | ☐ | `░░░░░` | 0 |  |
+| **08** | Cross-compilation with SDK | ☐ | `░░░░░` | 0 |  |
+| **09** | Common Build Errors | ☐ | `░░░░░` | 0 |  |
+| **09** | BitBake Debugging Tools | ☐ | `░░░░░` | 0 |  |
+| **09** | Log Analysis | ☐ | `░░░░░` | 0 |  |
 
 **Confidence Scale:** `░` = Not started, `█` = Beginner, `██` = Learning, `███` = Comfortable, `████` = Proficient, `█████` = Expert
 
@@ -133,18 +133,20 @@ Earn XP for every accomplishment! Update your total in the dashboard.
 
 Chronicle your journey! Add a new row for each session.
 
-| Date | Quest / Module | Outcome | Evidence | Time | XP | Level |
-|:----:|:--------------|:--------|:---------|:----:|:--:|:-----:|
-| - | *Start your journey...* | - | - | - | - | 🌱 |
+| Date | Quest / Module | Outcome | Evidence | Time |
+|:----:|:--------------|:--------|:---------|:----:|
+| 2025-11-24 | Setup YoctoQuest | Created learning journal and automation | notes/learning-journal.md | 1h |
+| 2025-11-24 | Module 00 | Read prerequisites | - | 45m |
+| 2025-11-24 | Testing | Tested auto-update script | update_progress.py | 30m |
+| - | *Start your journey...* | - | - | - |
 
 **How to log:**
 1. Add date in `YYYY-MM-DD` format
 2. Describe what you worked on
 3. Note success/failure and what you learned
 4. Link to build logs, config files, or code
-5. Track time spent
-6. Award yourself XP based on the guide above
-7. Note your current level with emoji
+5. Track time spent (formats: `2h`, `30m`, `1h 30m`)
+6. **XP is auto-calculated** from your completed tasks in Learning Progress Tracker!
 
 ---
 
