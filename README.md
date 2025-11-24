@@ -1,10 +1,10 @@
-# YoctoQuest
+# YoctoQuest 🎮
 
-My personal repository for learning the Yocto Project, step by step.
+I love games and I'm in love with embedded Linux. So let's have a Yocto Quest!
 
 ## What This Is
 
-A structured learning path with 27 topics covering Yocto from setup to BSP development. I track what I learn, test my understanding, and see real progress.
+A gamified learning path to master the Yocto Project. 27 topics, 11 modules, 8 badges to unlock. Track what you learn, level up from Apprentice to Yocto Master, and build real embedded Linux skills along the way.
 
 ## How It Works
 

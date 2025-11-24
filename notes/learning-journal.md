@@ -1,6 +1,6 @@
-# 🎮 YoctoQuest - Learning Journal (Quest Board)
+# 🎮 YoctoQuest - My Embedded Linux Adventure
 
-> Transform your Yocto learning journey into an adventure! Track XP, unlock badges, and level up from Novice to Master.
+> I love games and I'm in love with embedded Linux. So let's have a Yocto Quest! Level up from Apprentice to Yocto Master as you build real embedded Linux skills. Check off what you learn, unlock badges, and watch your progress grow.
 
 ---
 
@@ -136,8 +136,6 @@ Chronicle your journey! Add a new row for each session.
 | Date | Quest / Module | Outcome | Evidence | Time |
 |:----:|:--------------|:--------|:---------|:----:|
 | 2025-11-24 | Setup YoctoQuest | Created learning journal and automation | notes/learning-journal.md | 1h |
-| 2025-11-24 | Module 00 | Read prerequisites | - | 45m |
-| 2025-11-24 | Testing | Tested auto-update script | update_progress.py | 30m |
 | - | *Start your journey...* | - | - | - |
 
 **How to log:**
