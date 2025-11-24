@@ -40,7 +40,7 @@ Track what you've learned and your understanding level for each topic!
 
 | Module | Topic | Status | Confidence | XP Earned | Notes / Date |
 |:------:|:------|:------:|:----------:|:---------:|:-------------|
-| **00** | System Requirements | ☐ | `░░░░░` | 0 |  |
+| **00** | System Requirements | ✅ | `░░░░░` | 0 |  |
 | **00** | Tools Installation | ☐ | `░░░░░` | 0 |  |
 | **01** | What is Yocto? | ☐ | `░░░░░` | 0 |  |
 | **01** | Architecture Overview | ☐ | `░░░░░` | 0 |  |
