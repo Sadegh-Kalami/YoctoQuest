@@ -8,7 +8,7 @@
 
 | 🎯 **CURRENT LEVEL** | **Apprentice** | Stage 1/4 |
 |:--------------------:|:---------------------------------:|:---------------:|
-| ⚡ **Total XP** | **0 / 1000** | `[░░░░░░░░░░]` |
+| ⚡ **Total XP** | **30 / 1000** | `[░░░░░░░░░░]` |
 | 🏆 **Badges Earned** | **0 / 8** | `[░░░░░]` |
 | 📚 **Modules Complete** | **0 / 11** | `[░░░░░░░░░░░]` |
 | 🔥 **Current Streak** | **1 days** | Keep going! |
@@ -23,7 +23,7 @@
 
 | Level | Title | XP Required | Progress Bar | Status | Unlocked? |
 |:-----:|:------|:-----------:|:------------|:------:|:---------:|
-| **1** | 🌱 **Apprentice** | 0 - 250 | `[░░░░░░░░░░]` 0% | *Basics & Setup* | ✅ CURRENT |
+| **1** | 🌱 **Apprentice** | 0 - 250 | `[█░░░░░░░░░]` 12% | *Basics & Setup* | ✅ CURRENT |
 | **2** | 🔨 **Craftsman** | 250 - 600 | `[░░░░░░░░░░]` 0% | *Building & Recipes* | 🔒 |
 | **3** | ⚔️ **Warrior** | 600 - 1200 | `[░░░░░░░░░░]` 0% | *Debugging & Layers* | 🔒 |
 | **4** | 👑 **Yocto Master** | 1200+ | `[░░░░░░░░░░]` 0% | *Architecture & BSP* | 🔒 |
@@ -40,7 +40,7 @@ Track what you've learned and your understanding level for each topic!
 
 | Module | Topic | Status | Confidence | XP Earned | Notes / Date |
 |:------:|:------|:------:|:----------:|:---------:|:-------------|
-| **00** | System Requirements | ✅ | `░░░░░` | 0 |  |
+| **00** | System Requirements | ✅ | `███░░` | 30 | 2025-11-24 |
 | **00** | Tools Installation | ☐ | `░░░░░` | 0 |  |
 | **01** | What is Yocto? | ☐ | `░░░░░` | 0 |  |
 | **01** | Architecture Overview | ☐ | `░░░░░` | 0 |  |
@@ -97,7 +97,7 @@ Track module completion for structured learning path:
 
 | Module | Name | Progress | Tasks Done | XP Earned | Status |
 |:------:|:-----|:--------:|:----------:|:---------:|:------:|
-| 00 | Prerequisites | `[░░░░░░░░░░]` 0% | 0/3 | 0 | ☐ |
+| 00 | Prerequisites | `[███░░░░░░░]` 33% | 1/3 | 30 | ⏳ |
 | 01 | Fundamentals | `[░░░░░░░░░░]` 0% | 0/4 | 0 | ☐ |
 | 02 | Build System | `[░░░░░░░░░░]` 0% | 0/5 | 0 | ☐ |
 | 03 | Recipes | `[░░░░░░░░░░]` 0% | 0/4 | 0 | ☐ |
